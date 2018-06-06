@@ -1,11 +1,12 @@
-# This file is a template, and might need editing before it works on your project.
-# Full project: https://gitlab.com/pages/plain-html
 pages:
-  stage: deploy
+  image: node:v10.1.0
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+    - "yarn install"
+    - "yarn run build"
+    - "cp public/index.html public/404.html"
+  cache:
+    paths:
+    - node_modules/
   artifacts:
     paths:
     - public
