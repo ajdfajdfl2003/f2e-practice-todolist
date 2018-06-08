@@ -1,0 +1,15 @@
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  background-color: $light-warning;
+  border-radius: 3px;
+  padding: 24px;
+  .todo-header {
+    display: flex;
+  }
+
+  .todo-title {
+    flex: 1;
+    font-size: 1.5rem;
+  }
+}
