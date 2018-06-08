@@ -8,8 +8,9 @@
       </div>
     </div>
     <div class="container mt-4">
-      <div>
-        <input type="text" class="form-control form-control-lg"/>
+      <div class="position-relative">
+        <i class="add-todo fas fa-plus fa-lg position-absolute" style="left: 1rem; top: 1.15rem"></i>
+        <input type="text" class="add-todo form-control form-control-lg pl-5" placeholder="Add Task"/>
       </div>
 
       <div class="mt-4">
@@ -50,6 +51,15 @@ export default {
         color: white;
         box-shadow: 0 -5px $darn-primary inset;
       }
+    }
+  }
+
+  .add-todo {
+    color: #C8C8C8;
+
+    &::placeholder {
+      color: #C8C8C8;
+      text-align: left;
     }
   }
 
