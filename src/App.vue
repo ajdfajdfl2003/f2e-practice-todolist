@@ -30,6 +30,12 @@ export default {
 <style lang="scss">
   $darn-primary: #00408B;
   $light-warning: #FFF2DC;
+
+  body, ul {
+    margin: 0;
+    font-family: 'Roboto', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+  }
+
   .todo-nav {
     a {
       color: $darn-primary;
