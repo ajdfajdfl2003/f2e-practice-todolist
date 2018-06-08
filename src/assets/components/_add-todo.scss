@@ -1,8 +1,14 @@
 .add-todo {
   color: #C8C8C8;
+  padding-bottom: 1.5rem;
 
-  &::placeholder {
-    color: #C8C8C8;
-    text-align: left;
+  input {
+   width: 620px;
+   height: 65px;
+
+   &::placeholder {
+     color: #C8C8C8;
+     text-align: left;
+   }
   }
 }

@@ -7,13 +7,12 @@
         <a href="#">Completed</a>
       </div>
     </div>
-    <div class="container mt-4">
-      <div class="position-relative">
-        <i class="add-todo fas fa-plus fa-lg position-absolute" style="left: 1rem; top: 1.15rem"></i>
-        <input type="text" class="add-todo form-control form-control-lg pl-5" placeholder="Add Task"/>
+    <div class="container" style="padding-top: 1.5rem">
+      <div class="add-todo position-relative">
+        <i class="fas fa-plus fa-lg position-absolute" style="left: 1rem; top: 1.6rem"></i>
+        <input type="text" class="form-control form-control-lg pl-5" placeholder="Add Task"/>
       </div>
-
-      <div class="mt-4">
+      <div>
         <div class="todo-item">
           <div class="todo-header"></div>
         </div>
