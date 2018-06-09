@@ -3,10 +3,10 @@
     <div class="todo-item active">
       <div class="d-flex todo-header">
         <div class="todo-check">
-          <input type="checkbox" id="defaultCheck2">
-          <label for="defaultCheck2"></label>
+          <input type="checkbox" id="add-todo-check">
+          <label for="add-todo-check"></label>
         </div>
-        <label class="todo-title" for="defaultCheck2">
+        <label class="todo-title" for="add-todo-check">
           <input type="text" placeholder="Type Something Here…" class="">
         </label>
         <div class="todo-control">
