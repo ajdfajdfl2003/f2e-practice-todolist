@@ -13,13 +13,19 @@
         <input type="text" class="form-control form-control-lg pl-5"
                placeholder="Add Task" @focus="addNewTodo"/>
       </div>
-      <TodoItem />
+      <transition name="slide">
+        <edit-todo-item v-if="isNewTodo"
+                        @closeEditTodo="closeEdit">
+        </edit-todo-item>
+      </transition>
+      <todo-item />
     </div>
   </div>
 </template>
 
 <script>
 import TodoItem from './components/TodoItem'
+import EditTodoItem from './components/EditTodoItem'
 
 export default {
   name: 'App',
@@ -29,7 +35,8 @@ export default {
     }
   },
   components: {
-    TodoItem
+    TodoItem,
+    EditTodoItem
   },
   methods: {
     addNewTodo () {
