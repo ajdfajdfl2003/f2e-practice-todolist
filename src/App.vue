@@ -2,7 +2,7 @@
   <div id="app">
     <div class="bg-primary">
       <div class="container justify-content-between d-flex todo-nav">
-        <a href="#" class="active">My Task</a>
+        <a href="#" class="active">My Tasks</a>
         <a href="#">In Progress</a>
         <a href="#">Completed</a>
       </div>
