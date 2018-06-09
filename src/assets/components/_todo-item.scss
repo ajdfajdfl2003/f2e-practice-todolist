@@ -1,10 +1,15 @@
 .todo-item {
   display: flex;
   flex-direction: column;
-  background-color: $light-warning;
   border-radius: 5px;
   width: 620px;
   height: 102px;
+  background-color: $todo-normal;
+  margin-bottom: 8px;
+  
+  &.stared {
+    background-color: $light-warning;
+  }
 
   .todo-header {
     display: flex;
@@ -66,6 +71,24 @@
     span {
       font-size: 1.5rem;
       color: black;
+    }
+  }
+
+  .todo-control {
+    font-size: 1.5rem;
+
+    .todo-star {
+      color: black;
+      padding-right: 2rem;
+
+      &.stared {
+        color: #F5A623;
+      }
+    }
+
+    .todo-pencil {
+      color: black;
+      padding-right: 2rem;
     }
   }
 }
