@@ -6,7 +6,7 @@
   height: 102px;
   background-color: $todo-normal;
   margin-bottom: 8px;
-  
+
   &.stared {
     background-color: $light-warning;
   }
@@ -90,5 +90,10 @@
       color: black;
       padding-right: 2rem;
     }
+  }
+
+  .todo-footer {
+    color: #757575;
+    padding-left: 4.5rem;
   }
 }

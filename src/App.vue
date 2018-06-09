@@ -31,6 +31,12 @@
               </a>
             </div>
           </div>
+          <div class="todo-footer">
+            <i class="far fa-calendar-alt"></i>
+            <span>5/14</span>
+            <i class="far fa-file ml-3"></i>
+            <i class="fas fa-comment-dots ml-3"></i>
+          </div>
         </div>
         <div class="todo-item">
           <div class="todo-header">
