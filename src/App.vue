@@ -19,6 +19,9 @@
               <input type="checkbox" id="defaultCheck1">
               <label for="defaultCheck1"></label>
             </div>
+            <label class="todo-title" for="defaultCheck1">
+              <span>Type Something Here…</span>
+            </label>
           </div>
         </div>
       </div>
