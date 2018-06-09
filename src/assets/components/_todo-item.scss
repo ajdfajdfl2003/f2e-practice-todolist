@@ -70,7 +70,6 @@
 
     span {
       font-size: 1.5rem;
-      color: black;
     }
   }
 
@@ -96,4 +95,11 @@
     color: #757575;
     padding-left: 4.5rem;
   }
+}
+.todo-done {
+  .todo-title {
+    text-decoration: line-through;
+  }
+  color: #9B9B9B;
+  height: 76px;
 }

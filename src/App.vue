@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import TodoItem from './components/TodoItem';
+import TodoItem from './components/TodoItem'
 
 export default {
   name: 'App',
