@@ -7,7 +7,7 @@
           <label></label>
         </div>
         <label class="todo-title">
-          <input type="text" placeholder="Type Something Here…" class="">
+          <input type="text" placeholder="Type Something Here…" v-model="cacheTodo.message">
         </label>
         <div class="todo-control">
           <a href="#" class="text-muted">
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="d-flex todo-btn-group">
-          <button class="btn text-danger w-50 btn-lg" @click="closeEdit">
+          <button class="btn btn-white text-danger w-50 btn-lg" @click="closeEdit">
             <i class="fas fa-times"></i> Cancel
           </button>
           <button class="btn btn-primary w-50 btn-lg" @click="saveTodo">
@@ -71,7 +71,15 @@
 
 <script>
 export default {
+  props: ['todo'],
   name: 'EditTodo',
+  data () {
+    return {
+      cacheTodo: {},
+      comment: '',
+      isNew: false
+    }
+  },
   methods: {
     closeEdit () {
       this.$emit('closeEditTodo')
@@ -82,3 +90,9 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+  .btn-white {
+    background-color: white;
+    border-color: white;
+  }
+</style>
