@@ -3,10 +3,10 @@
     <div class="todo-item active">
       <div class="d-flex todo-header">
         <div class="todo-check">
-          <input type="checkbox" id="add-todo-check">
-          <label for="add-todo-check"></label>
+          <input type="checkbox">
+          <label></label>
         </div>
-        <label class="todo-title" for="add-todo-check">
+        <label class="todo-title">
           <input type="text" placeholder="Type Something Here…" class="">
         </label>
         <div class="todo-control">
@@ -21,21 +21,47 @@
       <div class="todo-body">
         <div class="todo-content">
           <div class="todo-row">
-            <div class="todo-icon">
+            <div class="todo-icon d-inline">
               <i class="far fa-calendar-alt"></i>
+              <label>Deadline</label>
             </div>
-            <!--<div>
-              <label for="">Deadline</label>
+            <div>
               <div class="form-inline todo-form-control">
                 <input type="date" class="form-control border-0">
                 <input type="date" class="form-control border-0 ml-2">
               </div>
-            </div>-->
+            </div>
+          </div>
+          <div class="todo-row">
+            <div class="todo-icon d-inline">
+              <i class="far fa-file"></i>
+              <label>File</label>
+            </div>
+            <div>
+              <div class="todo-form-control">
+                <i class="fas fa-plus-square" style="font-size: 36px"></i>
+              </div>
+            </div>
+          </div>
+          <div class="todo-row">
+            <div class="todo-icon d-inline">
+              <i class="far fa-comment-dots"></i>
+              <label>Comment</label>
+            </div>
+            <div>
+              <div class="todo-form-control">
+                <textarea name="" class="form-control w-100 border-0" placeholder="Type your memo here"
+                          ></textarea>
+              </div>
+            </div>
           </div>
         </div>
         <div class="d-flex todo-btn-group">
           <button class="btn text-danger w-50 btn-lg" @click="closeEdit">
             <i class="fas fa-times"></i> Cancel
+          </button>
+          <button class="btn btn-primary w-50 btn-lg" @click="saveTodo">
+            <i class="fas fa-plus"></i> Save
           </button>
         </div>
       </div>
@@ -48,6 +74,9 @@ export default {
   name: 'EditTodo',
   methods: {
     closeEdit () {
+      this.$emit('closeEditTodo')
+    },
+    saveTodo () {
       this.$emit('closeEditTodo')
     }
   }

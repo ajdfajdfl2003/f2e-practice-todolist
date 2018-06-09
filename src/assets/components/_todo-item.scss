@@ -34,7 +34,7 @@
   }
 
   .todo-row {
-
+    margin-bottom: 22px;
   }
 
   .todo-icon {
@@ -43,6 +43,12 @@
 
   .todo-form-control {
     flex: 1;
+    padding-left: 22px;
+    textarea {
+      &::placeholder {
+        color: $light-gray;
+      }
+    }
   }
 
   .todo-title {
