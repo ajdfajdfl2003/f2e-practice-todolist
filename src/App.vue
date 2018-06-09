@@ -14,7 +14,12 @@
       </div>
       <div>
         <div class="todo-item">
-          <div class="todo-header"></div>
+          <div class="todo-header">
+            <div class="todo-check">
+              <input type="checkbox" id="defaultCheck1">
+              <label for="defaultCheck1"></label>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -2,12 +2,64 @@
   display: flex;
   flex-direction: column;
   background-color: $light-warning;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 620px;
   height: 102px;
 
   .todo-header {
     display: flex;
+  }
+
+  .todo-check {
+    $check-box-size: 1.5rem;
+    $check-box-margin-top: 1.5rem;
+    $check-box-margin-left: 2rem;
+
+    margin-left: $check-box-margin-left;
+    margin-top: $check-box-margin-top;
+
+    input {
+      position: absolute;
+      opacity: 0;
+
+      & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      & + label:before {
+        content: '';
+        display: block;
+        width: $check-box-size;
+        height: $check-box-size;
+        border-radius: 2px;
+        background: white;
+      }
+      &:checked + label:before {
+        background: theme-color('primary');
+      }
+      &:checked + label:after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        bottom: 9px;
+        background: white;
+        width: 3px;
+        height: 3px;
+        box-shadow:
+          2px 0 0 white,
+          4px 0 0 white,
+          6px 0 0 white,
+          6px -2px 0 white,
+          6px -4px 0 white,
+          6px -6px 0 white,
+          6px -8px 0 white,
+          6px -10px 0 white,
+          6px -12px 0 white;
+        transform: rotate(45deg);
+      }
+    }
   }
 
   .todo-title {
