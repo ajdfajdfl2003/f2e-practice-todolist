@@ -7,7 +7,7 @@
         <a href="#">Completed</a>
       </div>
     </div>
-    <div class="container" style="padding-top: 1.5rem">
+    <div class="container" style="margin-top: 1.5rem">
       <div class="add-todo position-relative">
         <i class="fas fa-plus fa-lg position-absolute" style="left: 1rem; top: 1.6rem"></i>
         <input type="text" class="form-control form-control-lg pl-5" placeholder="Add Task"/>
