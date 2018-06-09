@@ -8,9 +8,10 @@
       </div>
     </div>
     <div class="container" style="margin-top: 1.5rem">
-      <div class="add-todo position-relative">
+      <div class="add-todo position-relative" v-if="this.isNewTodo === false">
         <i class="fas fa-plus fa-lg position-absolute" style="left: 1rem; top: 1.6rem"></i>
-        <input type="text" class="form-control form-control-lg pl-5" placeholder="Add Task"/>
+        <input type="text" class="form-control form-control-lg pl-5"
+               placeholder="Add Task" @focus="addNewTodo"/>
       </div>
       <TodoItem />
     </div>
@@ -22,8 +23,21 @@ import TodoItem from './components/TodoItem'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      isNewTodo: false
+    }
+  },
   components: {
     TodoItem
+  },
+  methods: {
+    addNewTodo () {
+      this.isNewTodo = true
+    },
+    closeEdit () {
+      this.isNewTodo = false
+    }
   }
 }
 </script>
