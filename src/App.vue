@@ -2,9 +2,9 @@
   <div id="app">
     <div class="bg-primary">
       <div class="container justify-content-between d-flex todo-nav">
-        <a href="#" class="active">My Tasks</a>
-        <a href="#">In Progress</a>
-        <a href="#">Completed</a>
+        <a href="#" :class="{active: currentTab === 'all'}" @click="currentTab = 'all'">My Tasks</a>
+        <a href="#" :class="{active: currentTab === 'progress'}" @click="currentTab = 'progress'">In Progress</a>
+        <a href="#" :class="{active: currentTab === 'done'}" @click="currentTab = 'done'">Completed</a>
       </div>
     </div>
     <div class="container" style="margin-top: 1.5rem">
@@ -31,7 +31,8 @@ export default {
   name: 'App',
   data () {
     return {
-      isNewTodo: false
+      isNewTodo: false,
+      currentTab: 'all'
     }
   },
   components: {
@@ -41,9 +42,11 @@ export default {
   methods: {
     addNewTodo () {
       this.isNewTodo = true
+      this.currentTab = {}
     },
     closeEdit () {
       this.isNewTodo = false
+      this.currentTab = 'all'
     }
   }
 }

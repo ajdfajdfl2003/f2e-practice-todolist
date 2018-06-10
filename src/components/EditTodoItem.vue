@@ -85,6 +85,12 @@ export default {
       this.$emit('closeEditTodo')
     },
     saveTodo () {
+      const vm = this
+      const todo = {
+        ...vm.cacheTodo
+      }
+      todo.stared = false
+      todo.completed = 'progress'
       this.$emit('closeEditTodo')
     }
   }
