@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import './assets/all.scss'
 import App from './App'
+import VueLocalStorage from 'vue-localstorage'
 
 Vue.config.productionTip = false
+Vue.use(VueLocalStorage)
 
 /* eslint-disable no-new */
 new Vue({

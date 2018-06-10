@@ -75,6 +75,7 @@ export default {
   name: 'EditTodo',
   data () {
     return {
+      todos: [],
       cacheTodo: {},
       comment: '',
       isNew: false
@@ -91,7 +92,16 @@ export default {
       }
       todo.stared = false
       todo.completed = 'progress'
+      this.todos.push(todo)
+      this.$localStorage.set('todos', JSON.stringify(this.todos))
       this.$emit('closeEditTodo')
+    }
+  },
+  created () {
+    const todos = JSON.parse(this.$localStorage.get('todos'))
+    console.log(todos)
+    if (todos) {
+      this.todos = todos
     }
   }
 }
