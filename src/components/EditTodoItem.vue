@@ -95,6 +95,7 @@ export default {
       vm.todos.push(todo)
       vm.$localStorage.set('todos', JSON.stringify(vm.todos))
       vm.$emit('closeEditTodo')
+      vm.$emit('updateData')
     }
   },
   created () {

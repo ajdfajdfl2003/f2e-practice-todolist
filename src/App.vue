@@ -15,7 +15,8 @@
       </div>
       <transition name="slide">
         <edit-todo-item v-if="isNewTodo"
-                        @closeEditTodo="closeEdit">
+                        @closeEditTodo="closeEdit"
+                        @updateData="getData">
         </edit-todo-item>
       </transition>
       <div v-for="todo in todos" :key="todo.id">
@@ -57,7 +58,6 @@ export default {
     getData () {
       const vm = this
       let todos = JSON.parse(vm.$localStorage.get('todos'))
-      vm.todos = []
       if (todos) {
         vm.todos = todos
       }
