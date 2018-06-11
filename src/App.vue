@@ -18,7 +18,12 @@
                         @closeEditTodo="closeEdit">
         </edit-todo-item>
       </transition>
-      <todo-item />
+      <div v-for="todo in todos" :key="todo.id">
+        <todo-item
+          :todo="todo"
+          @updateData="getData"
+        ></todo-item>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +36,7 @@ export default {
   name: 'App',
   data () {
     return {
+      todos: [],
       isNewTodo: false,
       currentTab: 'all'
     }
@@ -47,7 +53,19 @@ export default {
     closeEdit () {
       this.isNewTodo = false
       this.currentTab = 'all'
+    },
+    getData () {
+      const vm = this
+      let todos = JSON.parse(vm.$localStorage.get('todos'))
+      vm.todos = []
+      if (todos) {
+        vm.todos = todos
+      }
     }
+  },
+  created () {
+    const vm = this
+    vm.getData()
   }
 }
 </script>

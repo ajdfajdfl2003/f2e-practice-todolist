@@ -92,16 +92,16 @@ export default {
       }
       todo.stared = false
       todo.completed = 'progress'
-      this.todos.push(todo)
-      this.$localStorage.set('todos', JSON.stringify(this.todos))
-      this.$emit('closeEditTodo')
+      vm.todos.push(todo)
+      vm.$localStorage.set('todos', JSON.stringify(vm.todos))
+      vm.$emit('closeEditTodo')
     }
   },
   created () {
-    const todos = JSON.parse(this.$localStorage.get('todos'))
-    console.log(todos)
+    const vm = this
+    const todos = JSON.parse(vm.$localStorage.get('todos'))
     if (todos) {
-      this.todos = todos
+      vm.todos = todos
     }
   }
 }

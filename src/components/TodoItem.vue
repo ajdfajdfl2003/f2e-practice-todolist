@@ -1,6 +1,35 @@
 <template>
   <div>
-    <div class="todo-item stared">
+    <div class="todo-item" :class="{stared: todo.stared}">
+      <div class="todo-header">
+        <div class="todo-check">
+          <input type="checkbox" :id="`todo-check-${todo.id}`"
+                 v-model="todo.completed"
+                 :true-value="'completed'"
+                 :false-value="'progress'">
+          <label :for="`todo-check-${todo.id}`"></label>
+        </div>
+        <label class="todo-title" :for="`todo-check-${todo.id}`">
+          <span>{{todo.message}}</span>
+        </label>
+        <div class="todo-control">
+          <a href="#" class="text-muted">
+            <i class="fas fa-star todo-star stared" v-if="todo.stared"></i>
+            <i class="far fa-star todo-star" v-else></i>
+          </a>
+          <a href="#" class="text-muted">
+            <i class="fas fa-pencil-alt todo-pencil"></i>
+          </a>
+        </div>
+      </div>
+      <div class="todo-footer">
+        <i class="far fa-calendar-alt"></i>
+        <span>5/14</span>
+        <i class="far fa-file ml-3"></i>
+        <i class="fas fa-comment-dots ml-3"></i>
+      </div>
+    </div>
+ <!--   <div class="todo-item stared">
       <div class="todo-header">
         <div class="todo-check">
           <input type="checkbox" id="defaultCheck1">
@@ -117,12 +146,13 @@
         <i class="far fa-file ml-3"></i>
         <i class="fas fa-comment-dots ml-3"></i>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
 export default {
+  props: ['todo'],
   name: 'Todo'
 }
 </script>
